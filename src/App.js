@@ -1,9 +1,16 @@
-import FetchApi from "./Fetch/fetchapi";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Posts from "./Fetch/posts";
 
 const APP = () => {
   return (
     <div className="app">
-      <FetchApi/>
+        <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Posts/>} />
+      
+      </Routes>
+    </BrowserRouter>
+      
     </div>
     );
 }
