@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Comments from "./Fetch/comments";
 import Posts from "./Fetch/posts";
 
 const APP = () => {
@@ -8,7 +7,6 @@ const APP = () => {
         <BrowserRouter>
       <Routes>
         <Route path="/" element={<Posts/>} />
-        <Route path="/comments" element={<Comments/>} />
       </Routes>
     </BrowserRouter>
       
