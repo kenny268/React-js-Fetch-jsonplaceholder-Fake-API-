@@ -5,12 +5,18 @@ function useAPI(url) {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  
   useEffect(() => {
-    
     fetch(url)
-    .then((res)=>res.json())
-    .then((data)=>{setData(data);setLoading(false);} )
-    .catch((error)=>setError(error))
+    .then(response => response.json())
+    .then(data => {
+      setData(data)
+      setLoading(false)
+    })
+    .catch(error => {
+      setError(error)
+    });
+
 }, [url]);
 
   return { data, error,loading};

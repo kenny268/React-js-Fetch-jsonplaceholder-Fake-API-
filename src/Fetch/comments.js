@@ -1,24 +1,24 @@
-import useAPI from "../hooks/UseAPi";
-const Comments = ({id}) => {
-
+const Comments = ({comments}) => {
     
-    const {data, error } =useAPI(`https://jsonplaceholder.typicode.com/posts/${id}/comments`);
-
-    console.log(error)
+    const obj = Object.assign({}, comments)
+    console.log("Here is comments",obj)
 
     return (  
-        <div>
-            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" >comments</button>
         <div className="collapse" id="collapseExample">
-            {data && data.map((comment)=>
+            {Object.keys(comments).length>1 && Object.keys(comments).map((comment)=>
                 <div className="card card-body" key={comment.id}>
                     <b><small>{comment.email}</small></b>
                     <p>{comment.body}</p>
-                </div>)}
-        </div>
-    </div>
-
-    );
-}
- 
+                </div>
+            )}
+        </div>);}
 export default Comments;
+
+
+                // setCards(prevCards => {
+                //     const updatedCards = [...prevCards];
+                //     const cardIndex = updatedCards.findIndex(card => card.id === cardId);
+                //     updatedCards[cardIndex] = {...updatedCards[cardIndex], body: data};
+                //     return updatedCards;
+                //   });
+                //

@@ -1,12 +1,17 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Posts from "./Fetch/posts";
 
+
+
 const APP = () => {
+
   return (
     <div>
-        <BrowserRouter>
+    <BrowserRouter>  
       <Routes>
-        <Route path="/" element={<Posts/>} />
+      
+          <Route path="/" element={<Posts/>} />
+  
       </Routes>
     </BrowserRouter>
       
