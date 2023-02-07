@@ -3,6 +3,8 @@ import { useState } from "react";
 //import CommentIcon from '@mui/icons-material/Comment';
 import Size from "./commentSize";
 import { ChatRightFill } from "react-bootstrap-icons";
+import ImageAlbum from "./image";
+import User from "./User";
 
 const PostDetails = ({post}) => {
 
@@ -19,10 +21,18 @@ const PostDetails = ({post}) => {
     }
     //console.log("Comments ",comments)
     return ( 
-        <div className="card" style={{"width":"80%"}} >
-            <div className="card-body" >
+        <div className="card" style={{"width":"80%","height":"20%"}} >
+            <h5 class="d-flex justify-content-center">
+                <span  >
+                    <User cardId={post.userId}/>
+                </span>
+            </h5>
+            <div className="card-body d-flex d-flex gap-3" >
+                <ImageAlbum cardId={post.id} />
+                <div >
                 <h5 className="card-title">{post.title}</h5>
                 <p className="card-text">{post.body}</p>
+                </div>
             </div>   
             <div id="accordion">
             <div class="card">
